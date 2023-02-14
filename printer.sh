@@ -49,3 +49,12 @@ dependency_check()
         cups-pdf
     )
 }
+
+configure_cups()
+{
+    systemctl enable cups.service
+    
+    systemctl start cups.service
+    
+    echo "$(tput setaf 3)Configure CUPS at http://localhost:631/$(tput setaf 7)"
+}
